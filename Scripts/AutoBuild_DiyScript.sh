@@ -108,12 +108,16 @@ EOF
 		case "${CONFIG_FILE}" in
 		d-team_newifi-d2-Clash | xiaoyu_xy-c5-Clash)
 			ClashDL mipsle-hardfloat tun
+                        AddPackage passwall-depends xiaorouji openwrt-passwall-packages main
+			AddPackage passwall-luci xiaorouji openwrt-passwall main
 		;;
 		esac
 			
 		case "${TARGET_PROFILE}" in
 		d-team_newifi-d2)
 			Copy ${CustomFiles}/${TARGET_PROFILE}_system ${BASE_FILES}/etc/config system
+                        AddPackage passwall-depends xiaorouji openwrt-passwall-packages main
+			AddPackage passwall-luci xiaorouji openwrt-passwall main
 		;;
 		x86_64)
 			ClashDL amd64 dev
