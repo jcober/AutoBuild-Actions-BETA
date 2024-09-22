@@ -154,7 +154,10 @@ EOF
 	;;
 	immortalwrt/immortalwrt*)
 		case "${TARGET_PROFILE}" in
-		x86_64)
+		d-team_newifi-d2)
+			Copy ${CustomFiles}/${TARGET_PROFILE}_system ${BASE_FILES}/etc/config system
+		;;
+                x86_64)
 			sed -i -- 's:/bin/ash:'/bin/bash':g' ${BASE_FILES}/etc/passwd
 			case "${CONFIG_FILE}" in
 			x86_64-NextV21)
